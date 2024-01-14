@@ -1,0 +1,88 @@
+@mixin flexR {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+@mixin flexRc {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flexC {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+@mixin flexRc {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flexCc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flexRsb {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin flexCsb {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin flexRsa {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin flexRGap($gap) {
+  margin: $gap * -1 0 0 $gap * -1;
+  width: calc(100% + $gap);
+  & > * {
+    margin: $gap 0 0 $gap;
+  }
+}
+
+@mixin flexCGap($gap) {
+  margin: 0 $gap * -1 $gap * -1 0;
+  height: calc(100% + $gap);
+  & > * {
+    margin: 0 $gap $gap 0;
+  }
+}
+
+@mixin singleLine {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin phone {
+  @media (max-width: 799px) {
+    @content;
+  }
+}
+
+@mixin pad {
+  @media (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
