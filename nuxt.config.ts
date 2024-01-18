@@ -33,12 +33,12 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/*', href: '/icon.png' },
         {
-          rel: 'text',
+          rel: 'preload',
           type: 'font/ttf',
           href: '@/assets/fonts/IBMPlexMono-Bold.ttf'
         },
         {
-          rel: 'text',
+          rel: 'preload',
           type: 'font/ttf',
           href: '@/assets/fonts/IBMPlexMono-Regular.ttf'
         }
