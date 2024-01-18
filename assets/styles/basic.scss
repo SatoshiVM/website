@@ -62,3 +62,73 @@ a {
 p {
   margin: 0;
 }
+
+/* Float Vue Style */
+.v-popper--theme-menu .v-popper-wrapper {
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: 2px; /* !importanté */
+    background: linear-gradient(to right, red, orange);
+  }
+}
+.v-popper--theme-menu .v-popper__inner {
+  background: linear-gradient(to right, #888, #ff7800) !important;
+  color: black;
+  padding: 2px;
+  position: relative;
+  border-radius: 8px !important;
+  border: none !important;
+  .dropdown-menu {
+    background: #000;
+    padding: 10px 20px;
+    border-radius: 6px !important;
+  }
+  // border-image-slice: 1;
+  .link-item {
+    color: #fff;
+    opacity: 1;
+    font-family: 'IBMPlexMono-Bold';
+    font-size: 16px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0px;
+    text-align: right;
+    text-transform: uppercase;
+    @include flexRc;
+    justify-content: flex-end;
+    align-items: flex-start;
+    cursor: pointer;
+    margin: 10px 0;
+    @include phone {
+      font-size: 12px;
+      margin: 0 4px;
+    }
+  }
+}
+.v-popper--theme-menu.v-popper__popper--hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.15s, visibility 0.15s;
+}
+
+.v-popper--theme-menu.v-popper__popper--shown {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.15s;
+}
+
+.v-popper--theme-menu .v-popper__arrow-inner {
+  visibility: hidden !important;
+  border-color: #fff;
+}
+
+.v-popper--theme-menu .v-popper__arrow-outer {
+  visibility: hidden !important;
+  border-color: #ddd;
+}

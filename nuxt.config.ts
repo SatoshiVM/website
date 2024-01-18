@@ -31,7 +31,7 @@ export default defineNuxtConfig({
     '@nuxt/devtools',
     '@vueuse/motion/nuxt',
     '@nuxtjs/fontaine',
-    'nuxt-particles'
+    'floating-vue/nuxt'
   ],
   components: ['~/components', '~/blocks', '~/components/icons'],
   vite: {
@@ -55,8 +55,5 @@ export default defineNuxtConfig({
         directives: {}
       }
     }
-  },
-  build: {
-    analyze: true
   }
 })

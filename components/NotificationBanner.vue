@@ -1,6 +1,4 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="banner">
@@ -10,11 +8,11 @@
 
 <style lang="scss" scoped>
 .banner {
-    padding: 12px 10px;
-    text-align: center;
-    background-color: $primary;
-    @include phone {
-        margin: 0 -16px;
+  padding: 12px 10px;
+  text-align: center;
+  background-color: $primary;
+  @include phone {
+    margin: 0 -16px;
   }
 }
 </style>

@@ -1,29 +1,5 @@
-<script lang="ts" setup>
-import xIcon from '~/assets/images/x.png'
-import discordIcon from '~/assets/images/discord.png'
-import githubIcon from '~/assets/images/github.png'
-
-const linkOptions = [
-  { id: 'x', label: 'X', icon: xIcon, link: 'https://twitter.com/SatoshiVM' },
-  {
-    id: 'github',
-    label: 'GITHUB',
-    icon: githubIcon,
-    link: 'https://github.com/SatoshiVM'
-  },
-  {
-    id: 'discord',
-    label: 'DISCORD',
-    icon: discordIcon,
-    link: 'https://discord.gg/satoshivm'
-  }
-]
-
-const isShow = ref(true)
-</script>
-
 <template>
-  <div class="layout-header" :class="{ show: isShow }">
+  <div class="layout-header">
     <div class="header-container">
       <div class="title">
         <SatoshiLogo />
@@ -44,15 +20,30 @@ const isShow = ref(true)
           href="https://docs.satoshivm.io"
           target="_blank"
         >Docs</a>
-        <a
-          v-for="item in linkOptions"
-          :key="item.id"
-          class="link-item"
-          :href="item.link"
-          target="_blank"
-        >
-          <img :src="item.icon" alt="" class="icon">
-        </a>
+        <VMenu placement="bottom-end">
+          <div class="link-item">
+            Paper
+          </div>
+
+          <template #popper>
+            <ul class="dropdown-menu">
+              <li>
+                <a
+                  href="https://github.com/SatoshiVM/whitepaper"
+                  target="_blank"
+                  class="link-item"
+                >White Paper</a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/SatoshiVM/yellowpaper"
+                  target="_blank"
+                  class="link-item"
+                >Yellow Paper</a>
+              </li>
+            </ul>
+          </template>
+        </VMenu>
       </div>
     </div>
   </div>
@@ -130,7 +121,7 @@ const isShow = ref(true)
         margin: 0 10px;
 
         @include phone {
-          font-size: 12px;
+          font-size: 14px;
           margin: 0 4px;
         }
 

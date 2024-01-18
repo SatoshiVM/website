@@ -1,4 +1,24 @@
 <script lang="ts" setup>
+import xIcon from '~/assets/images/x.png'
+import discordIcon from '~/assets/images/discord.png'
+import githubIcon from '~/assets/images/github.png'
+
+const linkOptions = [
+  { id: 'x', label: 'X', icon: xIcon, link: 'https://twitter.com/SatoshiVM' },
+  {
+    id: 'github',
+    label: 'GITHUB',
+    icon: githubIcon,
+    link: 'https://github.com/SatoshiVM'
+  },
+  {
+    id: 'discord',
+    label: 'DISCORD',
+    icon: discordIcon,
+    link: 'https://discord.gg/satoshivm'
+  }
+]
+
 const desText1 = ref('')
 const desText2 = ref('')
 const initDesText1 =
@@ -174,25 +194,42 @@ onScopeDispose(() => {
         </span>
       </div>
 
-      <div v-if="!isPhone" class="desc">
+      <div class="desc">
         <span>{{ desText1 }}</span>
         <br v-if="desText2">
         <span>{{ desText2 }}</span>
         <CursorBox :height="20" :width="6" :color="'rgb(165 165 165)'" />
       </div>
     </div>
+    <div v-motion-slide-visible-once-top class="links">
+      <a
+        v-for="(item, i) in linkOptions"
+        :key="item.id"
+        v-motion
+        :initial="{
+          opacity: 0,
+          y: -50
+        }"
+        :enter="{
+          opacity: 1,
+          y: 0,
+          transition: {
+            delay: i * 200,
+            ease: 'easeIn'
+          }
+        }"
+        class="link-item"
+        :href="item.link"
+        target="_blank"
+      >
+        <div class="label">
+          {{ item.label }}
+        </div>
+        <img :src="item.icon" alt="" class="icon">
+      </a>
+    </div>
+    <video src="/btcvm.mp4" autoplay muted loop class="video-card" />
   </div>
-
-  <div v-if="isPhone" class="desc">
-    <span>{{ desText1 }}</span>
-    <br v-if="desText2">
-    <span>{{ desText2 }}</span>
-    <CursorBox :height="15" :width="4" :color="'rgb(165 165 165)'" />
-  </div>
-  <video src="/btcvm.mp4" autoplay muted loop class="video-card" />
-  <!-- <div class="video-card">
-    <HomeCover />
-  </div> -->
 </template>
 
 <style lang="scss" scoped>
@@ -307,6 +344,9 @@ onScopeDispose(() => {
 }
 .video-card {
   height: 800px;
+  position: absolute;
+  top: 300px;
+  z-index: -1;
   width: min(100%, 1000px);
   @include phone {
     height: 400px;
@@ -314,7 +354,9 @@ onScopeDispose(() => {
 }
 .home-introduction {
   width: 100%;
+  margin-bottom: 700px;
   @include flexRsb;
+  position: relative;
   align-items: flex-start;
 
   .infos {
