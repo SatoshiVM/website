@@ -7,6 +7,8 @@ const addresses = ref(null)
 const transactions = ref(null)
 const btc = ref(null)
 
+const defaultData = { ...data.value }
+
 onMounted(() => {
   addresses.value.innerText = data.value.addresses.toLocaleString('en-US')
   transactions.value.innerText = data.value.transactions.toLocaleString('en-US')
@@ -58,15 +60,15 @@ watch(
 <template>
   <div class="home-stats">
     <div class="stat-card">
-      <span ref="addresses" class="stat-number">{{ data.addresses }}</span>
+      <span ref="addresses" class="stat-number">{{ defaultData.addresses }}</span>
       <span class="stat-description">Unique Wallets</span>
     </div>
     <div class="stat-card">
-      <span ref="transactions" class="stat-number">{{ data.transactions }}</span>
+      <span ref="transactions" class="stat-number">{{ defaultData.transactions }}</span>
       <span class="stat-description">Blockchain Transactions</span>
     </div>
     <div class="stat-card">
-      <span ref="btc" class="stat-number">{{ data.btc }}</span>
+      <span ref="btc" class="stat-number">{{ defaultData.btc }}</span>
       <span class="stat-description">BTC Bridged</span>
     </div>
   </div>
