@@ -31,7 +31,8 @@ export default defineNuxtConfig({
     '@nuxt/devtools',
     '@vueuse/motion/nuxt',
     '@nuxtjs/fontaine',
-    'floating-vue/nuxt'
+    'floating-vue/nuxt',
+    '@hypernym/nuxt-gsap'
   ],
   components: ['~/components', '~/blocks', '~/components/icons'],
   vite: {

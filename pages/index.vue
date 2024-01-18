@@ -4,10 +4,9 @@
   <div class="index-page">
     <div class="index-container">
       <HomeIntroduction />
+      <HomeStats />
       <HomeTable class="home-table" />
-      <HomeArchitecture
-        :style="{ marginBottom: isPhone ? '136px' : '200px' }"
-      />
+      <HomeArchitecture :style="{ marginBottom: '200px' }" />
       <HomeFooter class="footer" />
     </div>
   </div>
@@ -47,11 +46,10 @@
     }
 
     .home-table {
-      // margin-top: 746px;
       margin-bottom: 311px;
+      margin-top: 30px;
 
       @include phone {
-        margin-top: 276px;
         margin-bottom: 120px;
       }
     }
