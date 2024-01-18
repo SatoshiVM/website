@@ -358,6 +358,9 @@ onScopeDispose(() => {
   @include flexRsb;
   position: relative;
   align-items: flex-start;
+  @include phone {
+    margin-bottom: 400px;
+  }
 
   .infos {
     width: 722px;

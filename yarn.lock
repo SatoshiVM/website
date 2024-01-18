@@ -653,6 +653,13 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-2.0.1.tgz#e5211452df060fa8522b55c7b3c0c4d1981cb044"
   integrity sha512-dvuCeX5fC9dXgJn9t+X5atfmgQAzUOWqS1254Gh0m6i8wKd10ebXkfNKiRK+1GWi/yTvvLDHpoxLr0xxxeslWw==
 
+"@hypernym/nuxt-gsap@^2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@hypernym/nuxt-gsap/-/nuxt-gsap-2.4.2.tgz#5f0ec928749c36041a50fa53e649a49af544f516"
+  integrity sha512-Oep+0ABn58PbJo4tX8A8ja2hGjjBtyFE7DJAF/q8DIDGXMFaZlTbvcreCmMdKhuJ5NR8ODE0fEObUEYci901gg==
+  dependencies:
+    gsap "^3.12.2"
+
 "@iconify/json@^2.1.143":
   version "2.2.149"
   resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.149.tgz#8fc59939ed5ab12e423089a7810c226b9c379405"
@@ -4242,6 +4249,11 @@ graphemer@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/graphemer/-/graphemer-1.4.0.tgz#fb2f1d55e0e3a1849aeffc90c4fa0dd53a0e66c6"
   integrity sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==
+
+gsap@^3.12.2, gsap@^3.12.4:
+  version "3.12.4"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.12.4.tgz#b9383fe16bb14968e2c7db2a7c0e308edf551e7b"
+  integrity sha512-1ByAq8dD0W4aBZ/JArgaQvc0gyUfkGkP8mgAQa0qZGdpOKlSOhOf+WNXjoLimKaKG3Z4Iu6DKZtnyszqQeyqWQ==
 
 gzip-size@^7.0.0:
   version "7.0.0"

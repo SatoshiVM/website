@@ -3,11 +3,10 @@
 <template>
   <div class="index-page">
     <div class="index-container">
+      <HomeStats />
       <HomeIntroduction />
       <HomeTable class="home-table" />
-      <HomeArchitecture
-        :style="{ marginBottom: isPhone ? '136px' : '200px' }"
-      />
+      <HomeArchitecture :style="{ marginBottom: '200px' }" />
       <HomeFooter class="footer" />
     </div>
   </div>
@@ -39,19 +38,18 @@
     width: 100%;
     max-width: 1520px;
     margin: 0 auto;
-    padding: 133px 20px 0 20px;
+    padding: 30px 20px 0 20px;
 
     @include phone {
       padding: 0;
-      padding-top: 80px;
+      padding-top: 0px;
     }
 
     .home-table {
-      // margin-top: 746px;
       margin-bottom: 311px;
+      margin-top: 30px;
 
       @include phone {
-        margin-top: 276px;
         margin-bottom: 120px;
       }
     }
