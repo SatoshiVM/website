@@ -3,8 +3,8 @@
 <template>
   <div class="index-page">
     <div class="index-container">
-      <HomeIntroduction />
       <HomeStats />
+      <HomeIntroduction />
       <HomeTable class="home-table" />
       <HomeArchitecture :style="{ marginBottom: '200px' }" />
       <HomeFooter class="footer" />
@@ -38,11 +38,11 @@
     width: 100%;
     max-width: 1520px;
     margin: 0 auto;
-    padding: 133px 20px 0 20px;
+    padding: 30px 20px 0 20px;
 
     @include phone {
       padding: 0;
-      padding-top: 80px;
+      padding-top: 0px;
     }
 
     .home-table {

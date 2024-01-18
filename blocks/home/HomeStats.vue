@@ -77,12 +77,9 @@ watch(
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 50px;
-  margin-bottom: 80px;
+  margin-bottom: 30px;
   @include phone {
     flex-direction: column;
-    margin-top: 30px;
-    margin-bottom: 30px;
   }
   .stat-card {
     font-weight: 500;
@@ -95,6 +92,9 @@ watch(
     .stat-number {
       font-size: 50px;
       color: $primary;
+      @include phone {
+        font-size: 40px;
+      }
     }
     .stat-description {
       font-size: 20px;
