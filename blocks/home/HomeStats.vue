@@ -62,7 +62,7 @@ watch(
       <span class="stat-description">Unique Wallets</span>
     </div>
     <div class="stat-card">
-      <span ref="transactions" class="stat-number">{{ data.addresses }}</span>
+      <span ref="transactions" class="stat-number">{{ data.transactions }}</span>
       <span class="stat-description">Blockchain Transactions</span>
     </div>
     <div class="stat-card">
