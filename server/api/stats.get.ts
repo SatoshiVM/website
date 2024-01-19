@@ -20,9 +20,9 @@ export default defineEventHandler(async (_) => {
   } catch (error) {
     console.log(error)
     return {
-      addresses: 0,
-      transactions: 0,
-      btc: 0
+      addresses: 120891,
+      transactions: 521280,
+      btc: 528.796
     }
   }
 })
