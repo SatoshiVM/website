@@ -7,7 +7,11 @@ const addresses = ref(null)
 const transactions = ref(null)
 const btc = ref(null)
 
-const defaultData = { ...data.value }
+const defaultData = {
+  addresses: data.value.addresses.toFixed(3),
+  transactions: data.value.transactions.toLocaleString('en-US'),
+  btc: data.value.btc.toLocaleString('en-US')
+}
 
 onMounted(() => {
   addresses.value.innerText = data.value.addresses.toLocaleString('en-US')
@@ -60,11 +64,15 @@ watch(
 <template>
   <div class="home-stats">
     <div class="stat-card">
-      <span ref="addresses" class="stat-number">{{ defaultData.addresses }}</span>
+      <span ref="addresses" class="stat-number">{{
+        defaultData.addresses
+      }}</span>
       <span class="stat-description">Unique Wallets</span>
     </div>
     <div class="stat-card">
-      <span ref="transactions" class="stat-number">{{ defaultData.transactions }}</span>
+      <span ref="transactions" class="stat-number">{{
+        defaultData.transactions
+      }}</span>
       <span class="stat-description">Blockchain Transactions</span>
     </div>
     <div class="stat-card">
@@ -80,24 +88,30 @@ watch(
   justify-content: space-around;
   align-items: center;
   margin-bottom: 30px;
+
   @include phone {
     flex-direction: column;
   }
+
   .stat-card {
     font-weight: 500;
     min-width: 300px;
     @include flexC;
     align-items: center;
+
     @include phone {
       margin-top: 20px;
     }
+
     .stat-number {
       font-size: 50px;
       color: $primary;
+
       @include phone {
         font-size: 40px;
       }
     }
+
     .stat-description {
       font-size: 20px;
     }
