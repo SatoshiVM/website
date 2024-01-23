@@ -7,6 +7,11 @@
       <div class="links">
         <a
           class="link-item"
+          href="https://ud08snosct4.typeform.com/to/HVWGQftl"
+          target="_blank"
+        >Build</a>
+        <a
+          class="link-item"
           href="https://testnet.svmscan.io"
           target="_blank"
         >Explorer</a>
