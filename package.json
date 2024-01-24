@@ -24,7 +24,6 @@
     "eslint": "^8.34.0",
     "esno": "^4.0.0",
     "nuxt": "^3.8.2",
-    "nuxt-particles": "^0.1.5",
     "prettier": "^2.8.4",
     "sass": "^1.58.3",
     "stylelint": "^15.11.0",
@@ -42,5 +41,8 @@
     "gsap": "^3.12.4",
     "node-fetch-cache": "^4.1.0",
     "pinia": "^2.1.7"
-  }
+  },
+  "resolutions": {
+    "string-width": "4.2.3"
+ }
 }
