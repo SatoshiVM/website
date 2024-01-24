@@ -72,8 +72,8 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    explorerApi: '',
-    btcApi: '',
+    explorerApi: 'https://original-testnet.svmscan.io/api/v2',
+    btcApi: 'https://mempool.space/testnet/api',
     public: {}
   }
 })
