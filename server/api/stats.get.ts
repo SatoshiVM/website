@@ -1,16 +1,19 @@
+import NodeFetchCache, { MemoryCache } from 'node-fetch-cache'
+const fetch = NodeFetchCache.create({ cache: new MemoryCache({ ttl: 5000 }) })
+const fetcher = (url: string) => fetch(url).then(res => res.json())
+
 export default defineEventHandler(async (_) => {
+  const config = useRuntimeConfig()
   try {
-    const response = await fetch(
-      'https://original-testnet.svmscan.io/api/v2/stats'
-    )
-    const data = await response.json()
-    const balance = await fetch(
-      'https://mempool.space/testnet/api/address/tb1q7y4e54ujq3xqlvmghwmaade48qdam8xwf47kr9'
-    )
-    const balanceData = await balance.json()
+    const [data, balance] = await Promise.all([
+      fetcher(config.explorerApi + '/stats'),
+      fetcher(
+        config.btcApi + '/address/tb1q7y4e54ujq3xqlvmghwmaade48qdam8xwf47kr9'
+      )
+    ])
     const formateBalance =
-      (Number(balanceData.chain_stats.funded_txo_sum) +
-        Number(balanceData.mempool_stats.funded_txo_sum)) /
+      (Number(balance.chain_stats.funded_txo_sum) +
+        Number(balance.mempool_stats.funded_txo_sum)) /
       100000000
     return {
       addresses: Number(data.total_addresses),

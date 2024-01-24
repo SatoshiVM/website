@@ -72,10 +72,8 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    public: {
-      motion: {
-        directives: {}
-      }
-    }
+    explorerApi: '',
+    btcApi: '',
+    public: {}
   }
 })

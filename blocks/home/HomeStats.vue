@@ -8,9 +8,9 @@ const transactions = ref(null)
 const btc = ref(null)
 
 const defaultData = {
-  addresses: data.value.addresses.toFixed(3),
+  btc: data.value.btc.toFixed(3),
   transactions: data.value.transactions.toLocaleString('en-US'),
-  btc: data.value.btc.toLocaleString('en-US')
+  addresses: data.value.addresses.toLocaleString('en-US')
 }
 
 onMounted(() => {
