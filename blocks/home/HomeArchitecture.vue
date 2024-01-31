@@ -6,19 +6,19 @@ const desInfos = [
       'As depicted in the diagram, the SatoshiVM chain comprises three layers'
   },
   {
-    label: 'Settlement Layer'.toUpperCase(),
+    label: 'Settlement Layer (Bitcoin)'.toUpperCase(),
     content:
-      'This layer provides data availability, ordering, and validation of proofs for the SatoshiVM chain. It allows users and dApps to send messages and assets between Bitcoin and SatoshiVM. Bitcoin serves as the settlement layer, and bridges and rollup scripts are deployed on the Bitcoin network.'
+      'The settlement layer delivers the capacity for on-chain validation of the validity of SatoshiVM transactions, and the resultant verification outcomes are observable by all participants. Throughout the verification process, the digest of off-chain data is documented and preserved within this layer. It encompasses two dynamically generated taproot transactions, including Bit Commitments Taproot and Verification Taproot, tasked with accepting execution traces and conducting on-chain verification. '
   },
   {
     label: 'Sequencing Layer'.toUpperCase(),
     content:
-      ' This layer consists of an execution node responsible for executing transactions submitted to the SatoshiVM sequencer and transactions submitted to the L1 bridge script, generating L2 blocks. It also includes a Rollup node that handles batched transactions, publishes transaction data and block information to Bitcoin to ensure data availability, and submits validity proofs to Bitcoin for finality.'
+      'Situated in this layer are the foundational nodes, which bear the responsibility of upholding the functionality of SatoshiVM. Temporarily, this layer can store all pertinent transactions and states, a validity that can be substantiated through on-chain data.'
   },
   {
-    label: 'Proving Layer'.toUpperCase(),
+    label: 'Proving Layer (Circuits)'.toUpperCase(),
     content:
-      'This layer comprises a coordinator, which assigns proof tasks to provers and relays the generated proofs to the Rollup node to complete finality verification on Bitcoin. It also includes a prover pool, responsible for generating validity proofs that verify the correctness of L2 transactions.'
+      'This layer is responsible for generating proofs and plays a key role in verifying SatoshiVM transactions and states on Bitcoin. It generates transactions according to Bitcoin Taproot specifications, allowing the verification of SatoshiVM blocks on Bitcoin. Provers and nodes work together to transform data into specific taproot transactions and create execution traces where a node is capable of validating the entire process.'
   }
 ]
 
@@ -36,12 +36,7 @@ function openDoc () {
 
     <div class="content">
       <div class="process">
-        <img src="~/assets/images/BtcVM-Architecture.svg" alt="">
-        <!-- <div class="process-item">
-
-      </div>
-      <div class="process-item"></div>
-      <div class="process-item"></div> -->
+        <img src="~/assets/images/architecture.svg" alt="">
       </div>
 
       <div class="des-content">
@@ -54,7 +49,7 @@ function openDoc () {
 
       <div class="go-btn" @click="openDoc">
         <span>Read Details in Documents</span>
-        <ArrowRightIcon :size="isPhone ? 24 : 47" />
+        <ArrowRightIcon :size="isPhone ? 24 : 42" />
       </div>
     </div>
   </div>

@@ -1,5 +1,5 @@
 import NodeFetchCache, { MemoryCache } from 'node-fetch-cache'
-const fetch = NodeFetchCache.create({ cache: new MemoryCache({ ttl: 5000 }) })
+const fetch = NodeFetchCache.create({ cache: new MemoryCache({ ttl: 10000 }) })
 const fetcher = (url: string) => fetch(url).then(res => res.json())
 
 export default defineEventHandler(async (_) => {
