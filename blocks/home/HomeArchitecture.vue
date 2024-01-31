@@ -3,7 +3,7 @@ const desInfos = [
   {
     label: '',
     content:
-      'As depicted in the diagram, the SatoshiVM chain comprises three layers'
+      'As depicted in the diagram, the SatoshiVM chain comprises three layers.'
   },
   {
     label: 'Settlement Layer (Bitcoin)'.toUpperCase(),
